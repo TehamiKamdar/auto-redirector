@@ -5,6 +5,7 @@
   "description": "Automatically redirects specified URLs with a toggle and custom destination input.",
   "permissions": [
     "declarativeNetRequest",
+    "declarativeNetRequestFeedback",
     "storage"
   ],
   "host_permissions": ["<all_urls>"],
