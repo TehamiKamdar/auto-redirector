@@ -13,6 +13,7 @@
   },
   "action":{
     "default_popup":"index.html",
+    "default_title": "Auto Redirector (Youtube Only)",
     "default_icon":{
       "16": "",
       "48": "",
