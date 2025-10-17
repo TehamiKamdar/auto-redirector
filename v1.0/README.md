@@ -1,7 +1,7 @@
 # 🚀 Auto Redirector v1.0
 
-A lightweight browser extension that **automatically redirects specific websites** (like YouTube) to your chosen destination.  
-Compatible with **Google Chrome**, **Microsoft Edge**, **Brave**, **Opera**, and other Chromium-based browsers.
+A lightweight browser extension that **automatically redirects specific websites** (like YouTube) to our chosen destination.  
+Compatible with all Chromium-based browsers.
 
 ---
 
