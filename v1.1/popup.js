@@ -1,58 +1,71 @@
 document.addEventListener("DOMContentLoaded", () => {
+  const redirectToggle = document.getElementById("redirectToggle");
+  const redirectUrlInput = document.getElementById("redirectUrl");
+  const saveBtn = document.getElementById("saveBtn");
+  const statusMessage = document.getElementById("statusMessage");
 
-  const redirectToggle = document.getElementById("redirectToggle")
-  const redirectUrlInput = document.getElementById("redirectUrl")
-  const saveBtn = document.getElementById("saveBtn")
-  const statusMessage = document.getElementById("statusMessage")
-
+  // Load existing settings
   chrome.storage.sync.get(["redirectEnabled", "redirectUrl"], (data) => {
     if (data.redirectEnabled !== undefined) {
       redirectToggle.checked = data.redirectEnabled;
+      toggleInputState(data.redirectEnabled);
     }
     if (data.redirectUrl) {
-      redirectUrl.value = data.redirectUrl;
+      redirectUrlInput.value = data.redirectUrl;
     }
-  })
+  });
 
+  // Toggle input enable/disable
+  redirectToggle.addEventListener("change", () => {
+    const enabled = redirectToggle.checked;
+    toggleInputState(enabled);
+  });
+
+  function toggleInputState(enabled) {
+    redirectUrlInput.disabled = !enabled;
+    redirectUrlInput.style.opacity = enabled ? "1" : "0.6";
+  }
+
+  // Save settings
   saveBtn.addEventListener("click", () => {
     let redirectUrl = redirectUrlInput.value.trim();
+    const redirectEnabled = redirectToggle.checked;
 
-    // Auto-fix missing protocol
+    // Auto-add https:// if missing
     if (redirectUrl && !/^https?:\/\//i.test(redirectUrl)) {
       redirectUrl = "https://" + redirectUrl;
     }
 
-    const redirectEnabled = redirectToggle.checked;
-
     chrome.storage.sync.set(
       {
+        redirectEnabled,
         redirectUrl,
-        redirectEnabled
       },
       () => {
         if (chrome.runtime.lastError) {
-          showStatus("Failed to save settings.", "error");
+          showStatus("❌ Failed to save settings.", "error");
           console.error("Storage error:", chrome.runtime.lastError.message);
         } else {
-          showStatus("Settings saved successfully!", "success");
+          showStatus("✅ Settings saved successfully!", "success");
+          redirectUrlInput.value = redirectUrl;
+
           chrome.runtime.sendMessage({
             type: "updateRedirect",
             redirectEnabled,
-            redirectUrl
+            redirectUrl,
           });
         }
       }
     );
   });
 
-
+  // Status display helper
   function showStatus(message, type) {
     statusMessage.textContent = message;
-    statusMessage.className = `status-message status-${type}`
+    statusMessage.className = "status-message " + (type === "success" ? "status-success" : "status-error");
     setTimeout(() => {
-      statusMessage.style.display = "none"
+      statusMessage.textContent = "";
+      statusMessage.className = "status-message";
     }, 2500);
-    statusMessage.style.display = "block"
   }
-
-})
+});
