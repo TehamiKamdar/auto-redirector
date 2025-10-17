@@ -1,0 +1,20 @@
+{
+  "manifest_version": 3,
+  "name": "YouTube Redirector",
+  "version": "1.0",
+  "description": "Redirects all YouTube links to another site",
+  "permissions": ["declarativeNetRequest"],
+  "host_permissions": ["*://*.youtube.com/*", "*://youtu.be/*"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "declarative_net_request": {
+    "rule_resources": [
+      {
+        "id": "redirect_rules",
+        "enabled": true,
+        "path": "rules.json"
+      }
+    ]
+  }
+}
