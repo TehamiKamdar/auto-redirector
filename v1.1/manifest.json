@@ -12,7 +12,7 @@
     "service_worker":"background.js"
   },
   "action":{
-    "default_popup":"index.html",
+    "default_popup":"popup.html",
     "default_title": "Auto Redirector (Youtube Only)"
   }
 }
