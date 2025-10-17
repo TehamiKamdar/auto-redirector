@@ -13,16 +13,6 @@
   },
   "action":{
     "default_popup":"index.html",
-    "default_title": "Auto Redirector (Youtube Only)",
-    "default_icon":{
-      "16": "",
-      "48": "",
-      "128": ""
-    }
-  },
-  "icons":{
-    "16": "",
-    "48": "",
-    "128": ""
+    "default_title": "Auto Redirector (Youtube Only)"
   }
 }
