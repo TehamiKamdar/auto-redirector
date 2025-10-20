@@ -62,9 +62,9 @@ v1.1.1/
    git clone https://github.com/TehamiKamdar/auto-redirector.git
 2. Open your browser’s extensions page:
 
-    - Chrome → chrome://extensions
+  - Chrome → chrome://extensions
 
-    - Edge → edge://extensions
+  - Edge → edge://extensions
 
 3. Enable Developer Mode (top-right corner).
 
