@@ -27,8 +27,13 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // Save settings
-  saveBtn.addEventListener("click", () => {
-    let redirectUrl = redirectUrlInput.value.trim();
+  saveBtn.addEventListener("click", saveSettings);
+  redirectUrlInput.addEventListener("keydown", (e) => {
+    if (e.key === "Enter") {saveSettings()};
+  });
+
+  function saveSettings() {
+    let redirectUrl = redirectUrlInput.value.trim() || "www.example.com";
     const redirectEnabled = redirectToggle.checked;
 
     // Auto-add https:// if missing
@@ -57,7 +62,8 @@ document.addEventListener("DOMContentLoaded", () => {
         }
       }
     );
-  });
+  }
+
 
   // Status display helper
   function showStatus(message, type) {
