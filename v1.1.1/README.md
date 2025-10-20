@@ -60,6 +60,7 @@ v1.1.1/
 1. Download or clone this repository  
    ```bash
    git clone https://github.com/TehamiKamdar/auto-redirector.git
+   
 2. Open your browser’s extensions page:
 
   - Chrome → chrome://extensions
