@@ -32,4 +32,4 @@ It’s built using the latest **Manifest V3** API and works seamlessly across al
 
 1. **Clone or download** this repository:
    ```bash
-   git clone https://github.com/<your-username>/auto-redirector.git
+   git clone https://github.com/TehamiKamdar/auto-redirector.git

@@ -51,4 +51,4 @@ v1.0/
 ### 🧭 For Chrome / Edge / Brave / Opera
 1. Download or clone this repository  
    ```bash
-   git clone https://github.com/<your-username>/auto-redirector.git
+   git clone https://github.com/TehamiKamdar/auto-redirector.git
