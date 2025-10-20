@@ -58,3 +58,15 @@ v1.1/
 1. Download or clone this repository  
    ```bash
    git clone https://github.com/TehamiKamdar/auto-redirector.git
+   
+2. Open your browser’s extensions page:
+
+  - Chrome → chrome://extensions
+
+  - Edge → edge://extensions
+
+3. Enable Developer Mode (top-right corner).
+
+4. Click Load unpacked → select the v1.1.1 folder.
+
+5. Done ✅ — the extension will now auto-redirect YouTube to your set URL.
