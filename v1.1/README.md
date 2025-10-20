@@ -67,6 +67,6 @@ v1.1/
 
 3. Enable Developer Mode (top-right corner).
 
-4. Click Load unpacked → select the v1.1.1 folder.
+4. Click Load unpacked → select the v1.1 folder.
 
 5. Done ✅ — the extension will now auto-redirect YouTube to your set URL.
